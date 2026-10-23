@@ -1,0 +1,11 @@
+{
+  "name": "pittu-game",
+  "version": "1.0.0",
+  "description": "পিট্টু - বাংলার ঐতিহ্যবাহী খেলা — Pittu browser game",
+  "scripts": {
+    "start": "npx serve . -p 3456 --no-clipboard",
+    "dev": "npx live-server --port=3456 --open=index.html"
+  },
+  "keywords": ["bangla", "pittu", "game", "lagori"],
+  "license": "MIT"
+}

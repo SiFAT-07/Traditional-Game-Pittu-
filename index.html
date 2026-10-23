@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>পিট্টু — বাংলার ঐতিহ্যবাহী খেলা</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ===== SCREENS ===== -->
+  <div id="screen-menu" class="screen active">
+    <div class="menu-bg">
+      <div class="sky"></div>
+      <div class="ground-strip"></div>
+      <div class="cloud cloud1"></div>
+      <div class="cloud cloud2"></div>
+      <div class="tree tree1"></div>
+      <div class="tree tree2"></div>
+    </div>
+    <div class="menu-content">
+      <div class="game-logo">
+        <div class="logo-icon">🪨</div>
+        <h1 class="game-title">পিট্টু</h1>
+        <p class="game-subtitle">বাংলার ঐতিহ্যবাহী খেলা</p>
+        <p class="game-tagline">সাত পাথরের খেলায় তোমার বুদ্ধি আর লক্ষ্য পরীক্ষা করো!</p>
+      </div>
+      <div class="menu-buttons">
+        <button class="btn btn-primary" id="btn-play">▶ খেলা শুরু</button>
+        <button class="btn btn-secondary" id="btn-howto">📖 কীভাবে খেলবে</button>
+        <button class="btn btn-secondary" id="btn-settings">⚙️ সেটিংস</button>
+      </div>
+      <div class="menu-credit">পিট্টু — বাংলাদেশের ঐতিহ্যবাহী মাঠের খেলা</div>
+    </div>
+  </div>
+
+  <div id="screen-howto" class="screen">
+    <div class="panel-overlay">
+      <div class="panel">
+        <h2 class="panel-title">📖 কীভাবে খেলবে</h2>
+        <div class="howto-steps">
+          <div class="howto-step">
+            <div class="step-num">১</div>
+            <div class="step-text">
+              <strong>বল ছোড়ো:</strong> সাতটি পাথরের স্তূপকে লক্ষ্য করে বল ছোড়ো।
+              মাউস দিয়ে লক্ষ্য ঠিক করো, তারপর ক্লিক করে বল ছোড়ো।
+            </div>
+          </div>
+          <div class="howto-step">
+            <div class="step-num">২</div>
+            <div class="step-text">
+              <strong>পাথর সাজাও:</strong> পাথর ফেলে দিতে পারলে সেগুলো আবার সাজাও।
+              পাথরে ক্লিক করে তুলে নাও, তারপর মাঝখানে রাখো।
+            </div>
+          </div>
+          <div class="howto-step">
+            <div class="step-num">৩</div>
+            <div class="step-text">
+              <strong>বল এড়িয়ে চলো:</strong> পাথর সাজানোর সময় কম্পিউটার তোমাকে বল মারবে।
+              তোমার খেলোয়াড় বলের আঘাতে আউট হবে।
+            </div>
+          </div>
+          <div class="howto-step">
+            <div class="step-num">৪</div>
+            <div class="step-text">
+              <strong>জিতে নাও:</strong> সব পাথর সাজানো শেষ করলে তুমি রাউন্ড জিতবে!
+              কম্পিউটারের সব খেলোয়াড় আউট হলেও তুমি জিতবে।
+            </div>
+          </div>
+        </div>
+        <div class="howto-controls">
+          <h3>নিয়ন্ত্রণ</h3>
+          <div class="ctrl-grid">
+            <div class="ctrl-item"><span class="ctrl-key">⌨️ WASD / তীর</span> মাঠে দৌড়াও</div>
+            <div class="ctrl-item"><span class="ctrl-key">🖱️ মাউস</span> লক্ষ্য ঠিক করো</div>
+            <div class="ctrl-item"><span class="ctrl-key">👆 ক্লিক</span> বল ছোড়ো / পাথর তোলো</div>
+            <div class="ctrl-item"><span class="ctrl-key">👆 ট্যাপ</span> মোবাইলে একই কাজ</div>
+            <div class="ctrl-item"><span class="ctrl-key">⏸ P</span> বিরতি / চালু</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="btn-howto-back">← ফিরে যাও</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-settings" class="screen">
+    <div class="panel-overlay">
+      <div class="panel">
+        <h2 class="panel-title">⚙️ সেটিংস</h2>
+        <div class="settings-list">
+          <div class="setting-row">
+            <label>কম্পিউটারের কঠিনতা</label>
+            <div class="btn-group" id="difficulty-group">
+              <button class="btn-option active" data-val="easy">সহজ</button>
+              <button class="btn-option" data-val="medium">মাঝারি</button>
+              <button class="btn-option" data-val="hard">কঠিন</button>
+            </div>
+          </div>
+          <div class="setting-row">
+            <label>ম্যাচের দৈর্ঘ্য (পয়েন্ট)</label>
+            <div class="btn-group" id="matchlen-group">
+              <button class="btn-option" data-val="3">৩</button>
+              <button class="btn-option active" data-val="5">৫</button>
+              <button class="btn-option" data-val="7">৭</button>
+            </div>
+          </div>
+          <div class="setting-row">
+            <label>শব্দ</label>
+            <button class="btn-toggle" id="sound-toggle">🔊 চালু</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="btn-settings-back">← ফিরে যাও</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <div id="screen-game" class="screen">
+    <div id="hud">
+      <div class="hud-left">
+        <div class="hud-team human-team">
+          <div class="team-label">তোমার দল</div>
+          <div class="score-box" id="score-human">০</div>
+          <div class="players-row" id="human-players-hud"></div>
+        </div>
+      </div>
+      <div class="hud-center">
+        <div id="status-msg" class="status-msg">খেলা শুরু হচ্ছে...</div>
+        <div id="turn-indicator" class="turn-indicator"></div>
+        <div id="stones-left" class="stones-left"></div>
+      </div>
+      <div class="hud-right">
+        <div class="hud-team cpu-team">
+          <div class="team-label">কম্পিউটার</div>
+          <div class="score-box" id="score-cpu">০</div>
+          <div class="players-row" id="cpu-players-hud"></div>
+        </div>
+      </div>
+    </div>
+    <canvas id="game-canvas"></canvas>
+    <div id="pause-btn-wrap">
+      <button class="btn-icon" id="btn-pause" title="বিরতি (P)">⏸</button>
+    </div>
+    <div id="aim-hint" class="aim-hint" style="display:none">লক্ষ্য ঠিক করো ও ক্লিক করো</div>
+    <button id="defend-throw-btn" class="defend-throw-btn" type="button">🎯 বল ছোড়ো</button>
+    <div id="mobile-controls" aria-label="মোবাইল দৌড় নিয়ন্ত্রণ">
+      <button data-key="arrowup">▲</button>
+      <div><button data-key="arrowleft">◀</button><button data-key="arrowdown">▼</button><button data-key="arrowright">▶</button></div>
+    </div>
+  </div>
+
+  <!-- ===== OVERLAY PANELS ===== -->
+  <div id="overlay-pause" class="overlay" style="display:none">
+    <div class="overlay-panel">
+      <h2>⏸ বিরতি</h2>
+      <button class="btn btn-primary" id="btn-resume">▶ আবার শুরু</button>
+      <button class="btn btn-secondary" id="btn-restart-pause">🔄 নতুন খেলা</button>
+      <button class="btn btn-secondary" id="btn-menu-pause">🏠 মূল মেনু</button>
+    </div>
+  </div>
+
+  <div id="overlay-round" class="overlay" style="display:none">
+    <div class="overlay-panel">
+      <div id="round-icon" class="round-icon"></div>
+      <h2 id="round-title"></h2>
+      <p id="round-desc"></p>
+      <div class="score-display">
+        <span id="round-score-h"></span>
+        <span class="score-sep">—</span>
+        <span id="round-score-c"></span>
+      </div>
+      <button class="btn btn-primary" id="btn-continue">▶ পরবর্তী রাউন্ড</button>
+    </div>
+  </div>
+
+  <div id="overlay-match" class="overlay" style="display:none">
+    <div class="overlay-panel match-result">
+      <div id="match-icon" class="match-icon"></div>
+      <h2 id="match-title"></h2>
+      <p id="match-desc"></p>
+      <div class="final-score">
+        <div class="fs-item"><div class="fs-team">তোমার দল</div><div id="fs-h" class="fs-score"></div></div>
+        <div class="fs-item"><div class="fs-team">কম্পিউটার</div><div id="fs-c" class="fs-score"></div></div>
+      </div>
+      <button class="btn btn-primary" id="btn-play-again">🔄 আবার খেলো</button>
+      <button class="btn btn-secondary" id="btn-menu-match">🏠 মূল মেনু</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" style="display:none"></div>
+
+  <script src="js/audio.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
